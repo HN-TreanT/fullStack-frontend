@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "../../../../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "fetch_RestAPi",
+		"files.associations": {
+			"bitset": "cpp",
+			"complex": "cpp",
+			"functional": "cpp",
+			"limits": "cpp",
+			"memory": "cpp",
+			"iostream": "cpp"
+		},
+		"editor.formatOnSave": true,
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.donotVerifyTags": false,
+		"git.ignoreLimitWarning": true,
+		"files.enableTrash": true
+	}
+}
