@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { emitter } from "../../utils/emitter";
-class ModalUser extends Component {
+class EditUser extends Component {
   constructor(props) {
     super(props);
     //if (this.props.isCreateUser) {
@@ -35,7 +35,18 @@ class ModalUser extends Component {
       });
     });
   }
-  componentDidMount() {}
+  componentDidMount() {
+    this.setState({
+      email: this.props.user.email,
+      password: this.props.user.password,
+      firstName: this.props.user.firstName,
+      lastName: this.props.user.lastName,
+      address: this.props.user.address,
+      phonenumber: this.props.user.phonenumber,
+      gender: this.props.user.gender,
+      roleId: this.props.user.roleId,
+    });
+  }
   toggle = () => {
     this.props.toggle();
   };
@@ -67,13 +78,8 @@ class ModalUser extends Component {
     }
     return isValid;
   };
-
-  handleAddNewUser = async () => {
-    let isValid = this.checkValidateInput();
-    if (isValid === true) {
-      this.props.CreateNewUser(this.state);
-    }
-    emitter.emit("EVENT_CLEAR_MODAL_DATA", { id: "your id" });
+  handleUpdateUser = async () => {
+    this.props.UpdateUser(this.state, this.props.user.id);
   };
 
   render() {
@@ -85,12 +91,13 @@ class ModalUser extends Component {
         toggle={() => this.toggle()}
         className={"modal-user-container"}
       >
-        <ModalHeader toggle={() => this.toggle()}>Create User"</ModalHeader>
+        <ModalHeader toggle={() => this.toggle()}>Update</ModalHeader>
         <ModalBody>
           <div className="modal-user-body">
             <div className="col-12 input-container">
               <label>Email</label>
               <input
+                disabled={this.props.isOpenModalEditUser}
                 type="email"
                 name="email"
                 onChange={(e) => {
@@ -102,6 +109,7 @@ class ModalUser extends Component {
             <div className="col-12 input-container">
               <label>Password</label>
               <input
+                disabled={this.props.isOpenModalEditUser}
                 type="password"
                 name="password"
                 onChange={(e) => {
@@ -190,9 +198,9 @@ class ModalUser extends Component {
           <Button
             color="primary"
             className="px-3"
-            onClick={() => this.handleAddNewUser()}
+            onClick={() => this.handleUpdateUser()}
           >
-            {this.props.isCreateUser ? "Create" : "Update"}
+            Update
           </Button>
           <Button
             color="primary"
@@ -215,4 +223,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalUser);
+export default connect(mapStateToProps, mapDispatchToProps)(EditUser);

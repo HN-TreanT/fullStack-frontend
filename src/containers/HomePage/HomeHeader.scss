@@ -1,0 +1,184 @@
+.home-header-container{
+    height: 77px;
+    width: 100%;
+    padding: 0 40px;
+    .home-header-content{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+      .left-content{
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        .header-logo{
+            background: url('../../assets/images/logo.svg') center center no-repeat;
+            background-size: 160px 40px;
+            height: 100%;
+            width: 200px;
+          //  width: 100%;
+            font-size: 25px;
+        }
+        i{
+            font-size: 25px;
+            color: grey;
+        }
+      }
+      .center-content{
+        font-weight:350;
+        font-size: 13px;
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .child-center-content{
+            span{
+                font-weight: lighter;
+                font-size: 10px;
+            }
+
+        }
+        
+      }
+      .right-content{
+        width: 25%;
+        display: flex;
+        align-items: center;
+        justify-content:flex-end;
+        .support{
+          cursor: pointer;
+        }
+        .language-vi{
+                margin-left: 27px;
+                cursor: pointer;
+                opacity: 0.3;
+            &.action{
+              opacity: 1;
+              color: red;
+            }
+            &:hover{
+              opacity: 1;
+            }
+        }
+        .language-en{
+            margin-left: 10px;
+            cursor: pointer;
+            opacity: 0.3;
+            &.action{
+              opacity: 1;
+              color: orange;
+            }
+            &:hover{
+              opacity: 1  ;
+            }
+        }
+        
+      }
+
+
+    }
+}
+
+
+.home-header-banner{
+  background: url('../../assets/images/background.jpg') ;
+ //background-size: cover;
+ background-size:cover;
+ background-repeat: no-repeat;
+ height: 450px;
+display: flex;
+flex-direction: column;
+ 
+ .content-up{
+  height: 65%;
+  padding: 15px 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25),rgba(255, 255, 255, 0.1));
+  .title1{
+    text-align: center;
+    color: rgba(255, 255, 255, 0.922);
+    font-size: 32px;
+    text-shadow: 1px 1px 1px #333 ;
+    margin-top: 33px;   
+  }
+  .title2{
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    text-shadow: 1px 1px 1px #333 ;
+    font-weight: 550;
+    margin-bottom: 15px;
+  }
+  .search{
+   
+    border: 1px solid transparent;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    padding: 10px;
+    width: fit-content;
+  //  width: 430px;
+    border-radius: 30px;
+    background-color:#f7d800 ;
+    input{
+      height: 30px;
+      width: 400px;
+      border:none;
+      background-color: #f7d800;
+      outline: none;
+      font-size: 15px;
+    }
+    i{
+      font-size:15px;
+      margin: 0 5px;
+    }
+  }
+ }
+ 
+.content-down{
+  background-image: linear-gradient(rgba(255, 255, 255,0.1),rgba(255, 255,255, 0.9),rgba(255,255,255,1));
+  height: 35%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  .options{
+    display: flex;
+  
+    gap: 40px;
+  //  align-content: flex-end;
+   // flex-wrap: wrap;
+    .option-child{
+      width: 125px;
+      text-align: center;
+      .icon-child{
+     //   background-image: url('../../assets/images/133657-khamtuxa.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size:32px;
+        width: 50px ;
+        height: 50px;
+        background-color: white;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.402);
+        border-radius: 50%;
+        margin: 0 auto;
+        i{
+          font-size: 27px;
+          line-height: 50px;
+          color: #49bce2;
+         
+        }
+      }
+      .text-child{
+        font-size: 15px;
+        font-weight: 600;
+        &:hover{
+          color: #49bce2;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+}
